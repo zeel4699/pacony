@@ -1,0 +1,18 @@
+// Functions,Mixins,Variables
+@import "scss/abstracts/variables";
+
+// Reset,Typography,Helper Class
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/base/helper_class";
+
+// Components
+@import "scss/components/buttons";
+@import "scss/components/animations";
+@import "scss/components/form";
+@import "scss/components/pagination";
+@import "scss/components/preloader";
+
+// Layout
+@import "scss/layout/home";
+@import "scss/layout/rtl";

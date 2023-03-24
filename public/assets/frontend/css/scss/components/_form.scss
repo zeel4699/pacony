@@ -1,0 +1,280 @@
+/* ---------------------------------------------------------------- */
+/* 06.Form(Input, Comment)                             
+/* ---------------------------------------------------------------- */
+.custom-modal {
+	.modal-header {
+		text-align: center;
+		padding: 20px;
+		h5 {
+			font-size: 18px;
+		}
+		h5,button {
+			color: $color_white;
+		}
+		&.terms {
+			background: $color_landing;
+			color: $color_white;
+		}
+	}
+	.modal-body {
+		padding: 20px;
+		.form-popup-inner {
+			text-align: center;
+			.form-icon {
+				margin-bottom: 30px;
+				svg {
+					width: 100px;
+					height: 100px;
+					border-radius: 50%;
+				}
+				&.danger {
+					svg {
+						fill: $color_danger;
+						stroke: $color_danger;
+						background: rgba($color_danger,0.1);
+					}
+				}
+				&.success {
+					svg {
+						fill: $color_primary;
+						stroke: $color_primary;
+						background: rgba($color_primary,0.1);
+					}
+				}
+			}
+		}
+	}
+	.modal-footer {
+		padding: 20px;
+		justify-content: center;
+	}
+}
+body[style],header[style] {
+    padding-right:0 !important;
+}
+.modal-open {
+    overflow: auto;
+    padding-right:0 !important;
+}
+
+// Custom Check Box
+.custom-control {
+	padding: 0;
+	.custom-control-input {
+		position: relative;
+		width: 0;
+	}
+	span {
+		vertical-align: middle;
+		margin-left: 12px;
+		color: $color_black;
+		a {
+			color: $color_landing;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		@media screen and(max-width:576px) {
+			font-size: 14px;
+		}
+	}
+	.custom-control-label {
+		margin-left: 0;
+		width: 25px;
+		height: 25px;
+		outline: none;
+		text-align: center;
+		line-height: 25px;
+		&::before {
+			top: 0;
+			left: 0;
+			width: 25px;
+			height: 25px;
+			cursor: pointer;
+			text-align: center;
+			line-height: 25px;
+			position: absolute;
+			border:none !important;	
+			pointer-events: initial;
+			border-radius: 8px !important;
+			display: inline-block;
+			color: $color_landing;
+			box-shadow: none !important;
+			background: rgba($color_landing, 0.2);
+			font: {
+				size: 12px;
+				family: "Font Awesome 5 Free";
+				weight: 700;
+			}
+		}
+	}
+}
+.custom-control-input:checked ~ .custom-control-label::before, 
+.custom-control-label:active::before, 
+.custom-control-input:not(:disabled):active ~ .custom-control-label::before  {
+	border:none;	
+	content: "\f00c";
+	color: $color_landing;
+	background: rgba($color_landing, 0.2);
+}
+.custom-control-label::after {
+	display: none;
+}
+.custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
+   	border:none;
+}
+.custom-form-wrap {
+	h4 {
+		font-size: 34px;
+		margin-bottom: 30px;
+	}
+	button {
+		width: 100%;
+		border: none;
+		display: block;
+	}
+	.form-button {
+		margin-bottom: 30px !important;
+	}
+}
+
+
+.comment-item {
+    margin-bottom: 30px;
+	transition: all 0.5s ease;
+    display: flex;
+	align-items: flex-start;
+    p {
+        margin-bottom: 15px !important;
+    }
+    .comment-item-title {
+        margin-bottom: 8px;
+	}
+	.img {
+		padding: 10px;
+		flex: 0 0 120px;
+		border-radius: 50%;
+		margin-right: 20px;
+		display: inline-block;
+		border: 2px solid $color_primary;
+		img {
+			border-radius: 50%;
+		}
+	}
+    .comment-meta {
+        margin-bottom: 9px;
+        span {
+            display: inline-block;
+            margin-right: 10px;
+            color: $color_black;
+            font-size: 14px;
+            font-weight: 600;
+            i {
+                margin-right: 10px;
+                color: $color_primary;
+            }
+        }
+	}
+	.comment-item-body {
+		padding-bottom: 20px;
+		border-bottom: 1px solid rgba($color_black, 0.05);
+	}
+    .reply-btn {
+		font-size: 14px;
+		font-weight: 500;
+		margin-right: 10px;
+		margin-bottom: 10px;
+		padding: 10px 15px;
+		border-radius: 50px;
+		display: inline-block;
+		color: $color_dark_blue;
+		transition: all 0.5s ease;
+		border: 1px solid $color_soft_grey;
+		&:hover {
+			background:$color_primary;
+			border-color: transparent;
+			color: $color_white !important;
+			i {
+				color: $color_white !important;
+			}
+		}
+        i {
+            vertical-align: -1px;
+            margin-right: 7px;
+            display: inline-block;
+			color: $color_primary;
+			transition: all 0.5s ease;
+        }
+    }
+    &.sub-comment-item {
+        margin-left: 120px;
+    }
+}
+.leave-comment-wrapper {
+    .comment-form-group {
+        margin-bottom: 20px;
+        position: relative;
+        .form-control {
+			height: 60px;
+			color: $color_black;
+            outline: none;
+            border: none;
+			padding: 0 30px 0 30px;
+            border-radius: 30px;
+            transition: all 0.25s ease;
+            box-shadow: 0 10px 15px 0 rgba($color_landing, 0.1);
+			&:focus {
+				outline: none;
+				color: $color_black;
+			}
+		}
+		textarea.form-control {
+			height: auto;
+			padding-top: 20px;
+		}
+    }
+    button {
+        border: none;
+    }
+}
+/* ---------------------------------------------------------------- */
+/* Responsive Media Query (575px)
+/* ---------------------------------------------------------------- */
+@media only screen and (max-width:575.98px) {
+    .comment-item {
+		display: block;
+		.img {
+			margin-right: 0;
+			margin-bottom: 20px;
+		}
+	}
+}
+.custom-form-wrap {
+	.form-group {
+		margin-bottom: 20px;
+        position: relative;
+	}
+	.custom-form-control {
+		width: 100%;
+		display: block;
+		border: 1px solid rgba($color_black, 0.1);
+		padding: 18px 20px;
+		color: $color_black;
+		border-radius: 8px;
+		background: transparent;
+	}
+	.custom-link {
+		color: $color_landing;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	.login-links {
+		span {
+			display: block;
+			&:first-child {
+				margin-bottom: 5px;
+			}
+		}
+	}
+}

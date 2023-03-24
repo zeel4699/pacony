@@ -1,0 +1,225 @@
+/* ---------------------------------------------------------------- */
+/* 03.Helper Class                              
+/* ---------------------------------------------------------------- */
+.page-wrapper {
+    position: relative;
+    overflow-x: hidden;
+}
+body {
+    overflow-x: hidden;
+}
+.section {
+    padding: 100px 0;
+    .landing-section-heading-left {
+        text-align: left;
+        margin-bottom: 50px;
+        h2 {
+            display: block;
+            text-align: left;
+            position: relative;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            &:before, &:after {
+                bottom: 0;
+                height: 4px;
+                content: "";
+                position: absolute;
+                background: $color_landing;
+            }
+            &:before {
+                left: 0;
+                width: 20px;
+            }
+            &:after {
+                left: 30px;
+                width: 40px;
+            }
+        }
+        span {
+            font-size: 14px;
+            border-radius: 50px;
+            color: $color_white;
+            padding: 8px 18px;
+            margin-bottom: 10px;
+            display: inline-block;
+            background: $color_primary;
+        }
+    }
+    .landing-section-heading {
+        margin-bottom: 50px;
+        text-align: center;
+        h2 {
+            position: relative;
+            margin-bottom: 15px;
+            display: inline-block;
+            &::after {
+                content: "";
+                height: 3px;
+                width: 80px;
+                display: block;
+                margin: 15px auto 0 auto;
+                background: $color_landing;
+            }
+        }
+    }    
+}
+.no-padding {
+    padding: 0;
+    margin: 0;
+}
+.bg-dark-blue {
+    background: $color_dark;
+    .section-heading {
+        margin-bottom: 100px;
+        h2 {
+            color: $color_white;
+            &:after {
+                background: $color_primary;
+            }
+        }
+    }
+}
+.bg-primary-light {
+    background: rgba($color_primary,0.05);
+}
+.bg-grey {
+    background: $color_like_grey;
+}
+.bg-light-grey {
+    background-color: $color_light_grey;
+}
+.mb-30 {
+    margin-bottom: 30px;
+}
+.ml-3 {
+    margin-left: 10px;
+}
+.pb-30 {
+    padding-bottom: 30px;
+}
+.pb-minus-70 {
+    padding-bottom: 70px;
+}
+.pb-minus-76 {
+    padding-bottom: 76px;
+}
+.bg-overlay {
+    z-index: 1;
+    padding: 100px 0;
+    position: relative;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    &:before {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        z-index: -1;
+        position: absolute;
+        opacity: 0.75;
+        background: $color_primary;
+    }
+}
+.inner-header-title {
+    margin-bottom: 20px !important;
+    position: relative;
+    padding-bottom: 22px;
+    display: block;
+    &:after, &:before {
+        content: "";
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        position: absolute;
+        border-radius: 5px;
+    }
+    &:after {
+        width: 100%;
+        background: rgba($color_black, 0.05);
+    }
+    &:before {
+        width: 60px;
+        z-index: 36;
+        background: $color_primary;
+    }
+}
+#landingClientsCarousel, #latestBlogCarousel, #productListCarousel {
+    &.owl-carousel {
+        .owl-item img {
+            width: auto;
+            display: inline-block;
+        }
+        .owl-nav {
+            margin-top: 0;
+            position: absolute;
+            top: -130px;
+            right: 0;
+            display: inline-block;
+            button {
+                margin: 0;
+                padding: 0 !important;
+                color: $color_white;
+                text-align: center;
+                border-radius: 8px;
+                background: transparent;
+                display: inline-block;
+                transition: all 0.5s ease;
+                span {
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    border-radius: 8px;
+                    color: $color_landing;
+                    transition: all 0.5s ease;
+                    background: $color_white;
+                    box-shadow: 0 5px 3px 0px rgba($color_landing, 0.1);
+                }
+                &:hover {
+                    span {
+                        background: $color_landing;
+                        color: $color_white;
+                    }
+                }
+            }
+            button.owl-prev {
+                margin-right: 10px;
+            }
+        }
+    }
+}
+#productListCarousel {
+    &.owl-carousel {
+        .owl-nav {
+            top: -60px;
+        }
+    }
+}
+/* ---------------------------------------------------------------- */
+/* Responsive Media Query
+ * Extra small devices (portrait phones, less than 576px)
+/* ---------------------------------------------------------------- */
+@media only screen and (max-width:575.98px) {
+    .section {
+        .section-heading {
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+/* ---------------------------------------------------------------- */
+/* Responsive Media Query (less than 768px)
+/* ---------------------------------------------------------------- */
+@media only screen and (max-width: 768px) {
+	#landingClientsCarousel, #latestBlogCarousel, #productListCarousel {
+        &.owl-carousel {
+            .owl-nav {
+                top: 0;
+                position: static;
+                margin-bottom: 24px;
+            }
+        }
+    }
+}
