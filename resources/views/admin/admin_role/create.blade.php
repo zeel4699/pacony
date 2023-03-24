@@ -20,7 +20,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="name">{{ __('content.role_name') }} <span class="text-red">*</span></label>
+                                    <label for="name">{{ __('content.role_name') }}  <span class="text-red">*</span></label>
                                     <input id="name" name="name" type="text" class="form-control" required>
                                 </div>
                             </div>
